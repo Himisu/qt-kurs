@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1100</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Repair Workshop</string>
+  </property>
+
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="rootLayout">
+    <property name="spacing">
+     <number>12</number>
+    </property>
+    <property name="leftMargin">
+     <number>16</number>
+    </property>
+    <property name="topMargin">
+     <number>16</number>
+    </property>
+    <property name="rightMargin">
+     <number>16</number>
+    </property>
+    <property name="bottomMargin">
+     <number>16</number>
+    </property>
+
+    <item>
+     <widget class="QFrame" name="headerFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <layout class="QHBoxLayout" name="headerLayout">
+       <property name="leftMargin">
+        <number>12</number>
+       </property>
+       <property name="topMargin">
+        <number>10</number>
+       </property>
+       <property name="rightMargin">
+        <number>12</number>
+       </property>
+       <property name="bottomMargin">
+        <number>10</number>
+       </property>
+
+       <item>
+        <widget class="QLabel" name="label_Title">
+         <property name="text">
+          <string>Ремонтная мастерская — создание заявки</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </widget>
+       </item>
+
+       <item>
+        <spacer name="headerSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+
+    <item>
+     <widget class="QSplitter" name="mainSplitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+
+      <widget class="QWidget" name="leftPane">
+       <layout class="QVBoxLayout" name="leftLayout">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+
+        <item>
+         <widget class="QFrame" name="createCard">
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <layout class="QVBoxLayout" name="createCardLayout">
+           <property name="spacing">
+            <number>10</number>
+           </property>
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>ФИО</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="fullNameLineEdit">
+             <property name="placeholderText">
+              <string>Иванов Иван Иванович</string>
+             </property>
+            </widget>
+           </item>
+
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Тип устройства</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="deviceComboBox"/>
+           </item>
+
+<item>
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Описание проблемы</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTextEdit" name="problemTextEdit"/>
+           </item>
+
+           <item>
+            <widget class="QPushButton" name="submitButton">
+             <property name="text">
+              <string>Отправить заявку</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+
+        <item>
+         <widget class="QFrame" name="searchCard">
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <layout class="QVBoxLayout" name="searchCardLayout">
+           <property name="spacing">
+            <number>10</number>
+           </property>
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>Поиск заявки</string>
+             </property>
+             <property name="font">
+              <font>
+               <bold>true</bold>
+              </font>
+             </property>
+            </widget>
+           </item>
+
+           <item>
+            <widget class="QLabel" name="label_Search">
+             <property name="text">
+              <string>ФИО или тип устройства</string>
+             </property>
+            </widget>
+           </item>
+
+           <item>
+            <widget class="QLineEdit" name="searchLineEdit">
+             <property name="placeholderText">
+              <string>Например: Иванов или Ноутбук</string>
+             </property>
+            </widget>
+           </item>
+
+           <item>
+            <layout class="QHBoxLayout" name="searchButtonsLayout">
+             <item>
+              <widget class="QPushButton" name="searchButton">
+               <property name="text">
+                <string>Найти</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="clearSearchButton">
+               <property name="text">
+                <string>Сброс</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+
+          </layout>
+         </widget>
+        </item>
+
+       </layout>
+      </widget>
+
+      <widget class="QWidget" name="rightPane">
+       <layout class="QVBoxLayout" name="rightLayout">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+
+        <item>
+         <widget class="QFrame" name="tableCard">
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <layout class="QVBoxLayout" name="tableCardLayout">
+           <property name="spacing">
+            <number>10</number>
+           </property>
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+
+           <item>
+            <widget class="QLabel" name="labelTableTitle">
+             <property name="text">
+              <string>Мои заявки</string>
+             </property>
+             <property name="font">
+              <font>
+               <bold>true</bold>
+              </font>
+             </property>
+            </widget>
+           </item>
+
+<item>
+            <widget class="QTableWidget" name="requestsTable"/>
+           </item>
+
+          </layout>
+         </widget>
+        </item>
+
+       </layout>
+      </widget>
+
+     </widget>
+    </item>
+
+   </layout>
+  </widget>
+
+  <widget class="QMenuBar" name="menuBar"/>
+  <widget class="QStatusBar" name="statusBar"/>
+
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

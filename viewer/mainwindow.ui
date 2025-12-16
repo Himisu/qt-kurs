@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Repair Workshop</string>
+  </property>
+
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <property name="spacing">
+     <number>12</number>
+    </property>
+    <property name="leftMargin">
+     <number>12</number>
+    </property>
+    <property name="topMargin">
+     <number>12</number>
+    </property>
+    <property name="rightMargin">
+     <number>12</number>
+    </property>
+    <property name="bottomMargin">
+     <number>12</number>
+    </property>
+
+    <item>
+     <widget class="QFrame" name="headerFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <layout class="QHBoxLayout" name="headerLayout">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+
+       <item>
+        <widget class="QLabel" name="titleLabel">
+         <property name="text">
+          <string>Ремонтная мастерская — заявки</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </widget>
+       </item>
+
+       <item>
+        <spacer name="headerSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+
+       <item>
+        <widget class="QPushButton" name="btnManageParts">
+         <property name="text">
+          <string>Склад</string>
+         </property>
+        </widget>
+       </item>
+
+       <item>
+        <widget class="QPushButton" name="exportToCsv">
+         <property name="text">
+          <string>Экспорт CSV</string>
+         </property>
+        </widget>
+       </item>
+
+      </layout>
+     </widget>
+    </item>
+
+    <item>
+     <widget class="QTabWidget" name="requestsTabs">
+      <property name="documentMode">
+       <bool>true</bool>
+      </property>
+      <property name="movable">
+       <bool>false</bool>
+      </property>
+
+<widget class="QWidget" name="tabNew">
+       <attribute name="title">
+        <string>Новые</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="tabNewLayout">
+        <property name="spacing">
+         <number>10</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="labelNewHint">
+          <property name="text">
+           <string>Дважды кликни по заявке, чтобы открыть детали и работу с запчастями.</string>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="newRequests"/>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="newActionsLayout">
+          <item>
+           <spacer name="spacerNewLeft">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="moveToInProgress">
+            <property name="text">
+             <string>Принять в работу →</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+
+      <widget class="QWidget" name="tabInProgress">
+       <attribute name="title">
+        <string>В работе</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="tabInProgressLayout">
+        <property name="spacing">
+         <number>10</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="labelInProgressHint">
+          <property name="text">
+           <string>Заявки, которые уже приняты. Можно списывать запчасти и переводить в «Готов».</string>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="inProgress"/>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="inProgressActionsLayout">
+          <item>
+           <spacer name="spacerInProgressLeft">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="moveToReady">
+            <property name="text">
+             <string>Готово →</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+<widget class="QWidget" name="tabReady">
+       <attribute name="title">
+        <string>Готовые</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="tabReadyLayout">
+        <property name="spacing">
+         <number>10</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="labelReadyHint">
+          <property name="text">
+           <string>Готовые заявки. Кнопка «Завершить» удаляет заявку из системы.</string>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="ready"/>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="readyActionsLayout">
+          <item>
+           <spacer name="spacerReadyLeft">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="moveToCompleted">
+            <property name="text">
+             <string>Завершить (удалить)</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+
+     </widget>
+    </item>
+
+    <item>
+     <widget class="QLabel" name="footerHint">
+      <property name="text">
+       <string>Совет: держи путь проекта без пробелов и кириллицы (например, C:\QtProjects\RepairWorkshop\viewer), иначе Qt/MinGW может не найти .pro.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+
+   </layout>
+  </widget>
+
+  <widget class="QMenuBar" name="menuBar"/>
+  <widget class="QStatusBar" name="statusBar"/>
+
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
