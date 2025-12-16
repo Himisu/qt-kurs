@@ -1,2 +1,4 @@
 /build*
 /SQLITE
+.gitignore
+/.git
